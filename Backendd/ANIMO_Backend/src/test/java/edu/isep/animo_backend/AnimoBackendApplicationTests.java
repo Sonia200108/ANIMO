@@ -1,10 +1,10 @@
-package eps.team5.animo;
+package edu.isep.animo_backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AnimoApplicationTests {
+class AnimoBackendApplicationTests {
 
 	@Test
 	void contextLoads() {
