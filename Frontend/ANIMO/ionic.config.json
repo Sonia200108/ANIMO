@@ -1,0 +1,7 @@
+{
+  "name": "ANIMO",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

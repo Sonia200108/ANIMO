@@ -38,6 +38,6 @@ public class BlimpController {
     public Object deleteBlimp(@PathVariable(name = "id") long id) {
         service.deleteById(id);
         return true;
-    }localhost:8080/api/farms
+    }
 
 }
