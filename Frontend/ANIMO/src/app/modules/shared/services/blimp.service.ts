@@ -22,4 +22,12 @@ export class BlimpService {
   getBlimp(id:number): Observable<Blimp> {
     return this.http.get<Blimp>(`${apiUrl}/blimps/${id}`);
   }
+
+  start(message:string){
+    return this.http.post(`${apiUrl}/send-message`, message);
+  }
+
+  stop(message:string){
+    return this.http.post(`${apiUrl}/send-message`, message);
+  }
 }

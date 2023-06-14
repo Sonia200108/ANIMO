@@ -2,8 +2,8 @@ package edu.isep.animo_backend.controllers;
 
 import edu.isep.animo_backend.services.WebSocketService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,10 +18,10 @@ public class WebSocketController {
         this.webSocketService = webSocketService;
     }
 
-    @PostMapping("/connect")
-    public ResponseEntity<String> establishConnection(){
-        this.webSocketService.establishConnection();
-        return ResponseEntity.ok("Connection established");
-
+    @PostMapping("/send-message")
+    public void sendMessage(@RequestBody String message) {
+        System.out.println("Message received: " + message);
+        webSocketService.sendMessageToServer(message);
     }
+
 }

@@ -14,6 +14,8 @@ public class BlimpController {
 
     @GetMapping("/blimps")
     public Object getAllBlimps() {
+        System.out.println("getAllBlimps");
+
         return service.getAll();
     }
 

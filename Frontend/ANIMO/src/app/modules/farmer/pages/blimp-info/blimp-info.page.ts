@@ -51,4 +51,16 @@ export class BlimpInfoPage implements OnInit {
     this.rt.navigate(['/f/blimpmap', this.blimpId]);
   }
 
+  startBlimp(){
+    this.bs.start("startdcmotor").subscribe((data: any) => {
+    } );
+  }
+
+  stopBlimp(){
+    this.bs.stop("stopdcmotor").subscribe((data: any) => {
+
+  });
+}
+
+
 }
