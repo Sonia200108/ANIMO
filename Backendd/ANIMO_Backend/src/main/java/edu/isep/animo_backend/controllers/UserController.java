@@ -1,9 +1,12 @@
 package edu.isep.animo_backend.controllers;
 
+import edu.isep.animo_backend.models.Farm;
 import edu.isep.animo_backend.models.User;
 import edu.isep.animo_backend.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -38,5 +41,11 @@ public class UserController {
     public Object deleteUser(@PathVariable(name = "id") long id) {
         service.deleteById(id);
         return true;
+    }
+
+    @GetMapping("/users/{id}/farm")
+    public Object getFarmByUserId(@PathVariable(name = "id") long id) {
+        Object farm = service.getFarmByUserId(id);
+        return farm;
     }
 }

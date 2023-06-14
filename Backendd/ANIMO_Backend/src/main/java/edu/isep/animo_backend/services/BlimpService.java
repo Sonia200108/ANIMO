@@ -39,4 +39,8 @@ public class BlimpService implements IService<Blimp, Long>{
     public List<Blimp> getAll() {
         return blimpRepository.findAll();
     }
+
+    public List<Blimp> findByFarmId(Long id) {
+        return blimpRepository.findByFarmId(id);
+    }
 }

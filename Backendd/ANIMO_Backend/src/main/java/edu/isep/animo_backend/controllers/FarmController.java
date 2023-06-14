@@ -1,9 +1,13 @@
 package edu.isep.animo_backend.controllers;
 
 import edu.isep.animo_backend.models.Farm;
+import edu.isep.animo_backend.models.User;
 import edu.isep.animo_backend.services.FarmService;
+import edu.isep.animo_backend.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -11,6 +15,8 @@ public class FarmController {
 
     @Autowired
     private FarmService service;
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/farms")
     public Object getAllFarms() {
@@ -38,6 +44,12 @@ public class FarmController {
     public Object deleteFarm(@PathVariable(name = "id") long id) {
         service.deleteById(id);
         return true;
+    }
+
+    @GetMapping("/farms/{id}/users")
+    public List<User> getUsersByFarmId(@PathVariable Long id) {
+        List<User> users = userService.getUsersByFarmId(id);
+        return users;
     }
 
 }

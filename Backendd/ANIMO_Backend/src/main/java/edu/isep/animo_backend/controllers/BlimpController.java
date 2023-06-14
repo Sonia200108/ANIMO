@@ -40,4 +40,9 @@ public class BlimpController {
         return true;
     }
 
+    @GetMapping("/blimps/farm/{id}")
+    public Object getBlimpByFarmId(@PathVariable(name = "id") long id) {
+        return service.findByFarmId(id);
+    }
+
 }

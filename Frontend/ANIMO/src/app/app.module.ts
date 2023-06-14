@@ -7,29 +7,40 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthConfig, AuthModule } from '@auth0/auth0-angular';
-import { domain, clientId, callbackUri } from './auth.config';
-
+import { domain, clientId, callbackUri, audience } from './auth.config';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpAuthInterceptor } from './modules/shared/interceptor/auth.interceptor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+ 
 const config: AuthConfig = {
   domain,
   clientId,
   authorizationParams: {
     redirect_uri: callbackUri,
+    audience: audience,
+    scope: 'openid profile email read:users',
   },
-  // For using Auth0-Angular with Ionic on Android and iOS,
-  // it's important to use refresh tokens without the falback
-  useRefreshTokens: true,
-  useRefreshTokensFallback: false,
+  useRefreshTokens: true
+  
 };
 
 @NgModule({
     declarations: [AppComponent],
     imports: [
-        BrowserModule,
-        IonicModule.forRoot(),
+      CommonModule,
+      BrowserModule,
+      FormsModule,
+      ReactiveFormsModule,
+        IonicModule.forRoot({
+          animated: false,
+        }),
+        HttpClientModule,
         AppRoutingModule,
         AuthModule.forRoot(config),
     ],
-    providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
-    bootstrap: [AppComponent]
+    providers: [HttpAuthInterceptor],
+    bootstrap: [AppComponent],
+    exports: [CommonModule]
 })
 export class AppModule {}

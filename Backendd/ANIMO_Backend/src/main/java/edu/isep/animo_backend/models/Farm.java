@@ -17,4 +17,5 @@ public class Farm {
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private @Getter @Setter Address address;
 
+
 }
