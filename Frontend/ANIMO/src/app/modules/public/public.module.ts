@@ -6,16 +6,19 @@ import { IonicModule } from '@ionic/angular';
 import { PublicRoutingModule } from './public-routing.module';
 import { AuthenticationPage } from './pages/authentication/authentication.page';
 import { SharedModule } from '../shared/shared.module';
+import { HammerModule } from '@angular/platform-browser';
+import { LoginPage } from './pages/login/login.page';
 
 
 @NgModule({
-  declarations: [AuthenticationPage],
+  declarations: [AuthenticationPage, LoginPage],
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     PublicRoutingModule,
-    SharedModule
+    SharedModule,
+    HammerModule
   ]
 })
 export class PublicModule { }

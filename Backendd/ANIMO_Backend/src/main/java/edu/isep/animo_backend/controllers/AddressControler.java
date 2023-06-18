@@ -22,6 +22,13 @@ public class AddressControler {
         return service.findById(id);
     }
 
+    //Get address by whole address
+    @GetMapping("/addresses/{street}/{number}/{zip}/{city}/{country}")
+    public Object getAddressByWholeAddress(@PathVariable(name = "street") String street, @PathVariable(name = "number") String number, @PathVariable(name = "zip") String zip, @PathVariable(name = "city") String city, @PathVariable(name = "country") String country) {
+        return service.findByWholeAddress(street, number, zip, city, country);
+    }
+
+
     @PostMapping("/addresses")
     public Object createAddress(@RequestBody Address address) {
         service.save(address);

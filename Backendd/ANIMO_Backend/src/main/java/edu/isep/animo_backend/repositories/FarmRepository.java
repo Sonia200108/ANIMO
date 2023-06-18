@@ -11,6 +11,6 @@ import java.util.List;
 @Repository
 public interface FarmRepository extends JpaRepository<Farm, Long> {
 
-
+        Farm findByName(String name);
 
 }

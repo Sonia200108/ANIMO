@@ -13,6 +13,7 @@ import { MainmapPage } from './pages/mainmap/mainmap.page';
 import { BlimpmapPage } from './pages/blimpmap/blimpmap.page';
 import { BlimpcontrolPage } from './pages/blimpcontrol/blimpcontrol.page';
 import { BlimpInfoPage } from './pages/blimp-info/blimp-info.page';
+import { HammerModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { BlimpInfoPage } from './pages/blimp-info/blimp-info.page';
     IonicModule,
     FarmerPageRoutingModule,
     SharedModule,
+    HammerModule
   ],
   declarations: [DashboardPage, ProfilePage, MainmapPage, BlimpmapPage, BlimpcontrolPage, BlimpInfoPage]
 })

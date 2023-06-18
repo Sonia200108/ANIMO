@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AccountService } from 'src/app/modules/shared/services/account.service';
 import { BlimpService } from 'src/app/modules/shared/services/blimp.service';
 
 @Component({
@@ -19,9 +20,16 @@ export class BlimpInfoPage implements OnInit {
 
   blimpName: string;
 
+  currentUser: any;
+
+  randomRange: number;
+
+  randomBattery: number;
+
+  randomTemperture: number;
   
 
-  constructor(public rt: Router, public bs: BlimpService, private route: ActivatedRoute) { 
+  constructor(public rt: Router, public bs: BlimpService, private route: ActivatedRoute, public acc: AccountService) { 
     console.log(this.route.snapshot.paramMap.get('blimpid'));
     this.blimpId = parseInt(this.route.snapshot.paramMap.get('blimpid') || '{}');
 
@@ -33,6 +41,13 @@ export class BlimpInfoPage implements OnInit {
     }
     );
 
+    this.currentUser = this.acc.getCurrentUser();
+
+    this.randomRange = Math.floor(Math.random() * 1000) + 1;
+
+    this.randomBattery = Math.floor(Math.random() * 100) + 1;
+
+    this.randomTemperture = Math.floor(Math.random() * 40) + 25;
     
   }
 
@@ -51,16 +66,17 @@ export class BlimpInfoPage implements OnInit {
     this.rt.navigate(['/f/blimpmap', this.blimpId]);
   }
 
-  startBlimp(){
-    this.bs.start("startdcmotor").subscribe((data: any) => {
-    } );
+
+  goToDashboard(){
+    this.rt.navigate(['/f/dashboard']);
   }
 
-  stopBlimp(){
-    this.bs.stop("stopdcmotor").subscribe((data: any) => {
+  goToMainMap(){
+    this.rt.navigate(['/f/mainmap', this.currentUser.farm.id]);
+  }
 
-  });
-}
-
+  goToProfile(){
+    this.rt.navigate(['/f/profile']);
+  }
 
 }

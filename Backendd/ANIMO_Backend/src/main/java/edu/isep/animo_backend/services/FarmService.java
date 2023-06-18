@@ -40,4 +40,9 @@ public class FarmService implements IService<Farm, Long>{
     public List<Farm> getAll() {
         return farmRepository.findAll();
     }
+
+    //get farm by name
+    public Farm findByName(String name) {
+        return farmRepository.findByName(name);
+    }
 }

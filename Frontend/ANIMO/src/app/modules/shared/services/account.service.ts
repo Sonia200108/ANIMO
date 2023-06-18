@@ -32,7 +32,7 @@ export class AccountService {
 
     if (logoutFromAuth0) {
       this.auth.logout({ logoutParams: {
-        returnTo: 'http://localhost:4200/authentication',
+        returnTo: 'http://localhost:4200/login',
       } });
     }
 

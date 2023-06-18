@@ -26,10 +26,10 @@ export class ChooseFarmPage implements OnInit {
   }
 
   goBack() {
-    this.rt.navigate(['f/newuser']);
+    this.rt.navigate(['newuser']);
   }
 
   gotoCreateUser(){
-    this.rt.navigate(['f/createuser', this.selectedFarm]);
+    this.rt.navigate(['createuser', this.selectedFarm]);
   }
 }

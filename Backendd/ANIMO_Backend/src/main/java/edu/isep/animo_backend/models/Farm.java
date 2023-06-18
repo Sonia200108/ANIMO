@@ -9,7 +9,7 @@ import lombok.Setter;
 public class Farm {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private @Getter @Setter Long id;
     private @Getter @Setter String name;
 

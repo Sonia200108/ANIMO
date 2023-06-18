@@ -43,7 +43,7 @@ export class AuthenticationPage implements OnInit {
           console.log(token);
           this.acc.setToken(token);
           if (this.users.length == 0) {
-            this.rt.navigate(['/f/newuser']);
+            this.rt.navigate(['newuser']);
           }
           for (let user of this.users) {
             if (user.auth0id === this.currentUser.sub) {
@@ -52,7 +52,7 @@ export class AuthenticationPage implements OnInit {
               return; 
             }
           }
-          this.rt.navigate(['/f/newuser']);
+          this.rt.navigate(['newuser']);
                  
         });
       }

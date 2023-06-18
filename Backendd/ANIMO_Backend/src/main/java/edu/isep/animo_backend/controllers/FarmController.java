@@ -28,6 +28,12 @@ public class FarmController {
         return service.findById(id);
     }
 
+    //get farm by name
+    @GetMapping("/farms/name/{name}")
+    public Object getFarmByName(@PathVariable(name = "name") String name) {
+        return service.findByName(name);
+    }
+
     @PostMapping("/farms")
     public Object createFarm(@RequestBody Farm farm) {
         service.save(farm);

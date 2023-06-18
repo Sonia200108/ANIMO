@@ -9,7 +9,7 @@ import lombok.Setter;
 public class Blimp {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private @Getter @Setter Long blimpid;
     private @Getter @Setter String name;
     private @Getter @Setter double longitude;

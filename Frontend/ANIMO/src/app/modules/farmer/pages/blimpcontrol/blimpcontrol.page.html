@@ -1,39 +1,86 @@
 <ion-content class="ion-padding">
-  <div class="mt-4 flex justify-between px-4 py-2">
-    <div (click)="goBack()" class="rounded bg-gray-100 px-4 py-2 font-bold text-gray-500">
-      <svg class="mr-2 h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <div class="mt-14 flex justify-between px-4 py-2">
+    <div (click)="goBack()" class="rounded bg-gray-100 px-4 py-2 font-bold text-gray-500 shadow-inner">
+      <svg class="h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
         <path d="M177.5 414c-8.8 3.8-19 2-26-4.6l-144-136C2.7 268.9 0 262.6 0 256s2.7-12.9 7.5-17.4l144-136c7-6.6 17.2-8.4 26-4.6s14.5 12.5 14.5 22l0 72 288 0c17.7 0 32 14.3 32 32l0 64c0 17.7-14.3 32-32 32l-288 0 0 72c0 9.6-5.7 18.2-14.5 22z" />
       </svg>
     </div>
   </div>
-  <div class="flex h-full items-center justify-center">
-    <div class="grid grid-cols-3 gap-4">
+  
+  <div class="mt-10 flex items-center justify-center">
+    <div class="grid grid-cols-3 gap-7">
       <div class="invisible"></div>
-      <div class="rounded-2xl bg-green-400 p-6">
-        <svg class="h-12 w-12 fill-current text-white m-auto block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+      <div id="up" class="rounded-md bg-green-400 p-6 shadow-inner" #upElement> <!--Up-->
+        <svg class="m-auto block h-12 w-12 fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
           <path d="M318 177.5c3.8-8.8 2-19-4.6-26l-136-144C172.9 2.7 166.6 0 160 0s-12.9 2.7-17.4 7.5l-136 144c-6.6 7-8.4 17.2-4.6 26S14.4 192 24 192H96l0 288c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32l0-288h72c9.6 0 18.2-5.7 22-14.5z" />
         </svg>
       </div>
-      <div class="invisible">3</div>
-      <div class="rounded-2xl bg-green-400 p-6">
-        <svg class="h-12 w-12 fill-current text-white m-auto block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <div class="invisible"></div>
+      <div id="left" class="rounded-md bg-green-400 p-6 shadow-inner"  #leftElement> <!--Left-->
+        <svg class="m-auto block h-12 w-12 fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <path d="M177.5 414c-8.8 3.8-19 2-26-4.6l-144-136C2.7 268.9 0 262.6 0 256s2.7-12.9 7.5-17.4l144-136c7-6.6 17.2-8.4 26-4.6s14.5 12.5 14.5 22l0 72 288 0c17.7 0 32 14.3 32 32l0 64c0 17.7-14.3 32-32 32l-288 0 0 72c0 9.6-5.7 18.2-14.5 22z" />
         </svg>
       </div>
       <div class="invisible"></div>
-      <div class="rounded-2xl bg-green-400 p-6">
-        <svg class="h-12 w-12 fill-current text-white m-auto block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <div id="right" class="rounded-md bg-green-400 p-6 shadow-inner" #rightElement> <!--Right-->
+        <svg class="m-auto block h-12 w-12 fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z" />
         </svg>
       </div>
       <div class="invisible"></div>
-      <div class="rounded-2xl bg-green-400 p-6">
-        <svg class="h-12 w-12 fill-current text-white m-auto block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+      <div id="down" class="rounded-md bg-green-400 p-6 shadow-inner" #downElement> <!--Down-->
+        <svg class="m-auto block h-12 w-12 fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
           <path d="M2 334.5c-3.8 8.8-2 19 4.6 26l136 144c4.5 4.8 10.8 7.5 17.4 7.5s12.9-2.7 17.4-7.5l136-144c6.6-7 8.4-17.2 4.6-26s-12.5-14.5-22-14.5l-72 0 0-288c0-17.7-14.3-32-32-32L128 0C110.3 0 96 14.3 96 32l0 288-72 0c-9.6 0-18.2 5.7-22 14.5z" />
         </svg>
       </div>
       <div class="invisible"></div>
     </div>
   </div>
+  
+  <div class="mt-16 flex flex-col items-center">
+    <p class="mt-4 text-center text-3xl font-light text-gray-400">Mode</p>
+  </div>
+  
+  <div class="mt-10 grid grid-cols-2 place-items-center gap-4">
+    <div class="mx-auto flex">
+      <button (click)="start()" [ngClass]="{ 'bg-green-400': !isRunning, 'bg-gray-400': isRunning }" class="flex items-center rounded-full px-6 py-6 font-bold text-white shadow-xl">
+        <svg class="h-8 w-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+          <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z" />
+        </svg>
+      </button>
+    </div>
+    <div class="mx-auto flex">
+      <button (click)="stop()" [ngClass]="{ 'bg-green-400': isRunning, 'bg-gray-400': !isRunning }" class="flex items-center rounded-full px-6 py-6 font-bold text-white shadow-xl">
+        <svg class="h-8 w-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+          <path d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  
+  <div class="fixed bottom-0 mt-6 grid h-14 w-full grid-cols-3 bg-gray-50 shadow-inner">
+    <div class="mx-auto flex">
+      <div (click)="goToDashboard()" class="flex items-center px-4 py-3 font-bold text-gray-400">
+        <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z" />
+        </svg>
+      </div>
+    </div>
+    <div class="mx-auto flex">
+      <div (click)="goToMainMap()" class="flex items-center px-4 py-3 font-bold text-gray-400">
+        <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+          <path d="M384 476.1L192 421.2V35.9L384 90.8V476.1zm32-1.2V88.4L543.1 37.5c15.8-6.3 32.9 5.3 32.9 22.3V394.6c0 9.8-6 18.6-15.1 22.3L416 474.8zM15.1 95.1L160 37.2V423.6L32.9 474.5C17.1 480.8 0 469.2 0 452.2V117.4c0-9.8 6-18.6 15.1-22.3z" />
+        </svg>
+      </div>
+    </div>
+  
+    <div class="mx-auto flex">
+      <div (click)="goToProfile()" class="flex items-center px-4 py-3 font-bold text-gray-400">
+        <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+        </svg>
+      </div>
+    </div>
+  </div>
+  
 </ion-content>
-

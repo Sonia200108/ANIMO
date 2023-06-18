@@ -19,7 +19,11 @@ export class NewuserPage implements OnInit {
   }
 
   goToChooseFarm(){
-    this.rt.navigate(['f/choosefarm']);
+    this.rt.navigate(['choosefarm']);
+  }
+
+  goToCreateFarm(){
+    this.rt.navigate(['createfarm']);
   }
 
 }

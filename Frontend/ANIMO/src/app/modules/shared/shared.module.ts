@@ -8,21 +8,23 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { MapComponent } from './components/map/map.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
-import { NewFarmPage } from './pages/new-farm/new-farm.page';
 import { ChooseFarmPage } from './pages/choose-farm/choose-farm.page';
 import { FormsModule } from '@angular/forms';
 import { CreateUserPage } from './pages/create-user/create-user.page';
+import { HammerModule } from '@angular/platform-browser';
+import { CreateFarmPage } from './pages/create-farm/create-farm.page';
 
 @NgModule({
-  declarations: [NewuserPage, MapComponent,SearchFilterPipe, NewFarmPage, ChooseFarmPage, CreateUserPage],
+  declarations: [NewuserPage, MapComponent,SearchFilterPipe, ChooseFarmPage, CreateUserPage, CreateFarmPage],
   imports: [
     CommonModule,
     SharedRoutingModule,
     IonicModule,
     LeafletModule,
-    FormsModule
+    FormsModule,
+    HammerModule
   ],
-  exports: [NewuserPage, MapComponent,SearchFilterPipe, NewFarmPage, ChooseFarmPage, CreateUserPage],
+  exports: [NewuserPage, MapComponent,SearchFilterPipe, ChooseFarmPage, CreateUserPage, CreateFarmPage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SharedModule { }

@@ -57,13 +57,13 @@ export class CreateUserPage implements OnInit {
     this.user = new User(0,this.firstname, this.lastname, this.farm, this.auth0Id);
     this.uservice.createUser(this.user).subscribe((data: User) => {
       this.user = data;
-      this.rt.navigate(['f/dashboard']);
+      this.rt.navigate(['login']);
     });
     
   }
 
   goBack(){
-    this.rt.navigate(['f/choosefarm']);
+    this.rt.navigate(['choosefarm']);
   }
 
 }

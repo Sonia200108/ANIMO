@@ -38,4 +38,8 @@ public class AddressService implements IService<Address, Long> {
     public List<Address> getAll() {
         return addressRepository.findAll();
     }
+
+    public Address findByWholeAddress(String street, String number, String zip, String city, String country) {
+        return addressRepository.findByWholeAddress(street, number, zip, city, country);
+    }
 }

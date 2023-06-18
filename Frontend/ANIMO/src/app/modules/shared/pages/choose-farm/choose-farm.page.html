@@ -8,11 +8,6 @@
       <select [(ngModel)]="selectedFarm" class="mx-auto block w-72 rounded bg-transparent p-2 shadow-md">
         <option [value]="farm.id"  *ngFor="let farm of farms">{{ farm.name }}</option>
       </select>
-
-  
-      <!-- <input type="text" class="mx-auto mt-4 block w-72 rounded p-2 text-sm shadow-md bg-transparent" placeholder="First Name" />
-  
-      <input type="text" class="mx-auto mt-4 block w-72 rounded p-2 text-sm shadow-md bg-transparent" placeholder="Last Name" /> -->
   
       <button (click)="gotoCreateUser()" class="mx-auto mt-4 block h-8 w-72 rounded bg-green-400 text-lg font-semibold text-white shadow-md">Choose farm</button>
   

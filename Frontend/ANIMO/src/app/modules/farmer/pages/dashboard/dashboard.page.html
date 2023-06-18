@@ -9,18 +9,17 @@
   
   <div class="z-10 mt-12 flex items-center justify-between px-3">
     <div class="relative w-full">
-      <input type="text" class="w-full rounded border-0 bg-white p-2 pl-4 shadow" placeholder="Search blimp" [(ngModel)]="searchText" />
-      <div class="text-purple-lighter absolute right-0 top-0 p-2 pr-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+      <input type="text" class="w-full rounded border-0 bg-white p-2 pl-4 shadow-md" placeholder="Search blimp" [(ngModel)]="searchText" />
+      <div class="absolute right-0 top-0 p-2 pr-4">
+        <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
       </div>
     </div>
-    
   </div>
   
-  <div class="mt-10">
-    <ion-card *ngFor="let b of blimps | searchFilter: searchText" (click)="goToBlimpInfo(b.blimpid)" class="bg-green-400">
+  <div class="mt-10 max-h-[calc(100vh-260px)] overflow-y-auto">
+    <ion-card *ngFor="let b of blimps | searchFilter: searchText" (click)="goToBlimpInfo(b.blimpid)" class="bg-green-400 shadow-inner">
       <div class="grid grid-cols-2 gap-2">
         <div>
           <ion-card-header class="flex items-center justify-between">
@@ -35,7 +34,7 @@
       </div>
     </ion-card>
   </div>
-
+  
   <div class="fixed bottom-0 mt-6 grid h-14 w-full grid-cols-3 bg-gray-50 shadow-inner">
     <div class="mx-auto flex">
       <div class="flex items-center px-4 py-3 font-bold text-green-400">
