@@ -23,6 +23,10 @@ export class BlimpService {
     return this.http.get<Blimp>(`${apiUrl}/blimps/${id}`);
   }
 
+  createBlimp(blimp:Blimp){
+    return this.http.post(`${apiUrl}/blimps`, blimp);
+  }
+
   start(message:string){
     return this.http.post(`${apiUrl}/send-message`, message);
   }

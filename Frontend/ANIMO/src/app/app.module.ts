@@ -12,7 +12,8 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpAuthInterceptor } from './modules/shared/interceptor/auth.interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
- 
+import { QRCodeModule } from 'angularx-qrcode';
+
 const config: AuthConfig = {
   domain,
   clientId,
@@ -38,7 +39,8 @@ const config: AuthConfig = {
         HttpClientModule,
         AppRoutingModule,
         AuthModule.forRoot(config),
-        HammerModule
+        HammerModule,
+        QRCodeModule
     ],
     providers: [HttpAuthInterceptor],
     bootstrap: [AppComponent],

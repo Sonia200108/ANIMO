@@ -16,8 +16,10 @@
         </svg>
       </div>
     </div>
+    <button class="bg-green-400 rounded text-white p-2 ml-3 " (click)="startScan()" ><svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
+    </svg></button>
   </div>
-  
   <div class="mt-10 max-h-[calc(100vh-260px)] overflow-y-auto">
     <ion-card *ngFor="let b of blimps | searchFilter: searchText" (click)="goToBlimpInfo(b.blimpid)" class="bg-green-400 shadow-inner">
       <div class="grid grid-cols-2 gap-2">
