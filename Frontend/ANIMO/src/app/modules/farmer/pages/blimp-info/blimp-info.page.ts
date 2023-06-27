@@ -79,4 +79,8 @@ export class BlimpInfoPage implements OnInit {
     this.rt.navigate(['/f/profile']);
   }
 
+  goToVideo(){
+    this.rt.navigate(['/f/blimpvideo', this.blimpId]);
+  }
+
 }

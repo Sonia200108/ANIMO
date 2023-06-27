@@ -8,6 +8,7 @@ import { MainmapPage } from './pages/mainmap/mainmap.page';
 import { BlimpmapPage } from './pages/blimpmap/blimpmap.page';
 import { BlimpcontrolPage } from './pages/blimpcontrol/blimpcontrol.page';
 import { BlimpInfoPage } from './pages/blimp-info/blimp-info.page';
+import { BlimpvideoPage } from './pages/blimpvideo/blimpvideo.page';
 
 const routes: Routes = [
   {
@@ -48,6 +49,11 @@ const routes: Routes = [
         component: DashboardPage
 
       },
+      {
+        path: 'blimpvideo/:blimpid',
+        component: BlimpvideoPage,
+        canActivate: [AuthGuard]
+      }
 
     ],
   }

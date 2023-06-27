@@ -58,7 +58,7 @@ export class BlimpcontrolPage implements OnInit {
     let intervalIdRight: any = null;
   
     mc.on('press', () => {
-      this.bs.start("goups").subscribe((data: any) => {});
+      this.bs.start("godowns").subscribe((data: any) => {});
     });
     
     mc.on('pressup', () => {
@@ -67,7 +67,7 @@ export class BlimpcontrolPage implements OnInit {
     });
     
     mc2.on('press', () => {
-      this.bs.start("godowns").subscribe((data: any) => {});
+      this.bs.start("goups").subscribe((data: any) => {});
     });
     
     mc2.on('pressup', () => {
@@ -77,9 +77,9 @@ export class BlimpcontrolPage implements OnInit {
 
     mc3.on('press', () => {
       if (this.bothOn) {
-        this.bs.start("stopleftdc").subscribe((data: any) => {});
+        this.bs.start("stoprightdc").subscribe((data: any) => {});
       } else {
-        this.bs.start("startrightdc").subscribe((data: any) => {});
+        this.bs.start("startleftdc").subscribe((data: any) => {});
       }
     });
     
@@ -87,26 +87,26 @@ export class BlimpcontrolPage implements OnInit {
       console.log('unleashed stopped dc');
       clearInterval(intervalIdLeft);
       if (this.bothOn) {
-        this.bs.start("startleftdc").subscribe((data: any) => {});
+        this.bs.start("startrightdc").subscribe((data: any) => {});
       } else {
-        this.bs.start("stoprightdc").subscribe((data: any) => {});
+        this.bs.start("stopleftdc").subscribe((data: any) => {});
       }
     });
     
     mc4.on('press', () => {
       if (this.bothOn) {
-        this.bs.start("stoprightdc").subscribe((data: any) => {});
+        this.bs.start("stopleftdc").subscribe((data: any) => {});
       } else {
-        this.bs.start("startleftdc").subscribe((data: any) => {});
+        this.bs.start("startrightdc").subscribe((data: any) => {});
       }
     });
     
     mc4.on('pressup', () => {
       clearInterval(intervalIdRight);
       if (this.bothOn) {
-        this.bs.start("startrightdc").subscribe((data: any) => {});
+        this.bs.start("startleftdc").subscribe((data: any) => {});
       } else {
-        this.bs.start("stopleftdc").subscribe((data: any) => {});
+        this.bs.start("stoprightdc").subscribe((data: any) => {});
       }
     });
   }

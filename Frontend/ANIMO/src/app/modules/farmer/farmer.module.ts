@@ -14,6 +14,7 @@ import { BlimpmapPage } from './pages/blimpmap/blimpmap.page';
 import { BlimpcontrolPage } from './pages/blimpcontrol/blimpcontrol.page';
 import { BlimpInfoPage } from './pages/blimp-info/blimp-info.page';
 import { HammerModule } from '@angular/platform-browser';
+import { BlimpvideoPage } from './pages/blimpvideo/blimpvideo.page';
 
 @NgModule({
   imports: [
@@ -24,6 +25,6 @@ import { HammerModule } from '@angular/platform-browser';
     SharedModule,
     HammerModule
   ],
-  declarations: [DashboardPage, ProfilePage, MainmapPage, BlimpmapPage, BlimpcontrolPage, BlimpInfoPage]
+  declarations: [DashboardPage, ProfilePage, MainmapPage, BlimpmapPage, BlimpcontrolPage, BlimpInfoPage, BlimpvideoPage]
 })
 export class FarmerPageModule {}
